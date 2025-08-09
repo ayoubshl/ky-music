@@ -1,3 +1,17 @@
+const express = require("express");
+const app = express();
+
+// Basic route to respond to pings
+app.get("/", (req, res) => {
+  res.send("Bot is running!");
+});
+
+// Listen on the port provided by Replit environment or 3000 by default
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Express server is running on port ${PORT}`);
+});
+
 require("dotenv").config();
 const {
   Client,
